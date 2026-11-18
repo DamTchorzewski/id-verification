@@ -1,0 +1,108 @@
+<p align="center">
+  <img src="openCv/path/detection_image.jpg" alt="Faces found by the Haar cascade on the sample ID card" width="60%">
+</p>
+
+## About
+
+**id-verification** is a small set of Python scripts for a basic identity-document check with OpenCV and OCR, plus
+the image-processing exercises that led to it. It was split off from the former `Id-Verification-And-Neural-Network`
+workspace; the PyTorch part lives in `neural-network`.
+
+- **ID check (`verifyID.py`).** Pre-processes a photo of a document (grayscale, binary threshold, morphological
+  opening), reads the text with Tesseract OCR and checks that the declared country of origin appears in it. It
+  prints `ID OK` or `Invalid ID`. The sample is the official specimen of a Polish identity card (it says
+  *WZORZEC*), not a real person's document.
+- **Image operations (`imageTransform.py`).** Load, grayscale, crop, rotate and save an image, Canny edge detection
+  and Haar-cascade face detection; the faces are cut out to `face_<n>.jpg`.
+- **SVM classifier (`svmModel.py`).** Trains an `SVC` on the GTSRB traffic-sign data set (43 classes, 32 × 32
+  histogram-equalised crops) and plots precision, recall and F1 per class. It is a separate exercise: it has nothing
+  to do with documents.
+
+> **Status:** a learning project, not a verification system. The ID check is a text match, not a test of
+> authenticity (no security features, no face comparison), and no accuracy figure is claimed. The GTSRB data set is
+> not in the repository.
+
+## Tech stack
+
+|        |                                                                                    |
+| ------ | ---------------------------------------------------------------------------------- |
+| Stack  | Python 3 scripts, run one at a time                                                |
+| Vision | OpenCV (`cv2`), Tesseract OCR through `pytesseract`                                |
+| ML     | scikit-learn (`SVC`, metrics), joblib, pandas, NumPy, matplotlib                   |
+| Data   | the sample image in `openCv/path/`; GTSRB downloaded to `data/` (git-ignored)      |
+| Tests  | none                                                                               |
+
+Comments are a mix of Polish and English; the README, commits and branches are in English.
+
+## Screenshots
+
+| Image                                                         | Shows                                                |
+| ------------------------------------------------------------- | ---------------------------------------------------- |
+| [openCv/path/image.jpg](openCv/path/image.jpg)                | the input: the specimen of a Polish ID card          |
+| [openCv/path/detection_image.jpg](openCv/path/detection_image.jpg) | the faces found by the Haar cascade                  |
+| [openCv/path/grayscale_image.jpg](openCv/path/grayscale_image.jpg) | the grayscale version                                |
+| [openCv/path/metric.png](openCv/path/metric.png)              | class-wise metrics of the SVM                        |
+| [openCv/path/precision.png](openCv/path/precision.png)        | class-wise precision of the SVM                      |
+
+## Quick start
+
+```bash
+git clone https://github.com/DamTchorzewski/id-verification.git
+cd id-verification
+pip install opencv-python pytesseract numpy pandas scikit-learn joblib matplotlib
+python openCv/imageTransform.py     # windows with each step; press a key to continue
+python openCv/verifyID.py           # needs Tesseract OCR installed
+```
+
+Run the scripts from the **repository root**: the paths inside (`./openCv/path/`, `./data/`) are relative to it.
+`verifyID.py` expects Tesseract at `C:\Program Files\Tesseract-OCR\tesseract.exe` (set in the script) and checks the
+declared country `Poland` against the text of `openCv/path/image.jpg`. Requirements: Python 3.
+
+## Scripts
+
+| Command                       | What it does                                                          |
+| ----------------------------- | --------------------------------------------------------------------- |
+| `python openCv/verifyID.py`        | OCR of the document photo and the country check                       |
+| `python openCv/imageTransform.py`  | grayscale, crop, rotate, edges and face detection on the sample image |
+| `python openCv/svmModel.py`        | train and evaluate the traffic-sign SVM (needs GTSRB in `data/`), writes `traffic_sign_classifier.pkl` |
+
+## Configuration
+
+None: no variables or keys. Settings sit at the top of the scripts: the image path and the declared country in
+`verifyID.py`, the Tesseract path in `verifyID.py`, the dataset path in `svmModel.py`.
+
+## Structure
+
+```
+openCv/verifyID.py        ★ the ID check
+openCv/imageTransform.py  image operations, edges, face detection
+openCv/svmModel.py        the traffic-sign classifier
+openCv/path/              the sample image and the results the scripts saved
+data/                     GTSRB, git-ignored, you download it
+docs/                     documentation
+```
+
+The folder is still called `openCv/` because the scripts use that path; renaming it means changing the paths in
+all three.
+
+## Branches and workflows
+
+Shared standards from `reops/standards`: `main` ≤ `develop` ≤ a working branch `<type>/<topic>`, fast-forward
+merges, Conventional Commits in English. The repository has no workflows.
+
+**Departures from the standards (and why):**
+
+- **No banner or showcase:** scripts with no site of their own; the saved result images are the pictures.
+- **No dependency file, tests, hooks or CI:** a learning project.
+- **History starts here:** the scripts were copied from `Id-Verification-And-Neural-Network` (now
+  `neural-network`), whose history holds their earlier commits.
+
+## Documentation
+
+| Document                                   | Covers                          |
+| ------------------------------------------ | ------------------------------- |
+| [docs/repository.md](docs/repository.md)   | GitHub description and topics   |
+
+---
+
+Author: [Damian Tchorzewski](https://github.com/DamTchorzewski)
