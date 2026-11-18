@@ -1,5 +1,12 @@
 <p align="center">
-  <img src="openCv/path/detection_image.jpg" alt="Faces found by the Haar cascade on the sample ID card" width="60%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/banner-dark.png">
+    <img src="docs/images/banner-light.png" alt="id-verification: ID-document check with OpenCV and OCR" width="100%">
+  </picture>
+</p>
+
+<p align="center">
+  <img src="docs/images/showcase.jpg" alt="The specimen of a Polish ID card and the faces found on it" width="100%">
 </p>
 
 ## About
@@ -36,13 +43,16 @@ Comments are a mix of Polish and English; the README, commits and branches are i
 
 ## Screenshots
 
-| Image                                                         | Shows                                                |
-| ------------------------------------------------------------- | ---------------------------------------------------- |
-| [openCv/path/image.jpg](openCv/path/image.jpg)                | the input: the specimen of a Polish ID card          |
-| [openCv/path/detection_image.jpg](openCv/path/detection_image.jpg) | the faces found by the Haar cascade                  |
-| [openCv/path/grayscale_image.jpg](openCv/path/grayscale_image.jpg) | the grayscale version                                |
-| [openCv/path/metric.png](openCv/path/metric.png)              | class-wise metrics of the SVM                        |
-| [openCv/path/precision.png](openCv/path/precision.png)        | class-wise precision of the SVM                      |
+The scripts have no interface of their own; these are the images they saved in `openCv/path/`, drawn in window frames by
+`tools/readme-images`. The ID card is the official specimen (*WZORZEC*). Above, the input and the faces the Haar
+cascade found; below, the class-wise metrics and precision of the SVM.
+
+<p align="center">
+  <img src="docs/images/metrics.jpg" alt="Class-wise metrics and precision of the traffic-sign SVM" width="100%">
+</p>
+
+Other results in `openCv/path/`: `grayscale_image.jpg`, `cropped_image.jpg`, `rotated_image.jpg`, `face_0.jpg` and
+`face_1.jpg`.
 
 ## Quick start
 
@@ -79,7 +89,7 @@ openCv/imageTransform.py  image operations, edges, face detection
 openCv/svmModel.py        the traffic-sign classifier
 openCv/path/              the sample image and the results the scripts saved
 data/                     GTSRB, git-ignored, you download it
-docs/                     documentation
+docs/                     documentation; docs/images/ holds the README images (generated)
 ```
 
 The folder is still called `openCv/` because the scripts use that path; renaming it means changing the paths in
@@ -92,7 +102,8 @@ merges, Conventional Commits in English. The repository has no workflows.
 
 **Departures from the standards (and why):**
 
-- **No banner or showcase:** scripts with no site of their own; the saved result images are the pictures.
+- **No "Open site" button, no phone strip:** scripts with no site; the images are the saved results in window frames,
+  and the logo is a wordmark (the project has none).
 - **No dependency file, tests, hooks or CI:** a learning project.
 - **History starts here:** the scripts were copied from `Id-Verification-And-Neural-Network` (now
   `neural-network`), whose history holds their earlier commits.
@@ -103,6 +114,13 @@ merges, Conventional Commits in English. The repository has no workflows.
 | ------------------------------------------ | ------------------------------- |
 | [docs/repository.md](docs/repository.md)   | GitHub description and topics   |
 
+The README images (`docs/images/`) are regenerated with `tools/readme-images` (profile `id-verification`) from the
+images in `openCv/path/`; the working shots go to `.scratch/`.
+
 ---
 
-Author: [Damian Tchorzewski](https://github.com/DamTchorzewski)
+<p align="center"><a href="https://damreboot.pl"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/damreboot/company-dark.svg"><img src="docs/images/damreboot/company-light.svg" alt="damreboot.pl: company website" height="36"></picture></a><a href="https://www.linkedin.com/in/damian-tchorzewski-3b2388275/"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/damreboot/linkedin-dark.svg"><img src="docs/images/damreboot/linkedin-light.svg" alt="LinkedIn: let's connect" height="36"></picture></a><a href="mailto:damianchabracki@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/damreboot/email-dark.svg"><img src="docs/images/damreboot/email-light.svg" alt="E-mail: write to me" height="36"></picture></a></p>
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/damreboot/engineered-dark.svg"><img src="docs/images/damreboot/engineered-light.svg" alt="" height="33" align="middle"></picture> Engineered by <b>Damian Chabracki</b> (DamReboot IT)
+</p>
