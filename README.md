@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/showcase.jpg" alt="The specimen of a Polish ID card and the faces found on it" width="100%">
+  <img src="docs/images/showcase.jpg" alt="The idea of the pipeline: a document photo, edge and text detection, OCR, a green verification mark" width="100%">
 </p>
 
 ## About
@@ -43,9 +43,9 @@ Comments are a mix of Polish and English; the README, commits and branches are i
 
 ## Screenshots
 
-The scripts have no interface of their own; these are the images they saved in `openCv/path/`, drawn in window frames by
-`tools/readme-images`. The ID card is the official specimen (*WZORZEC*). Above, the input and the faces the Haar
-cascade found; below, the class-wise metrics and precision of the SVM.
+The picture at the top is an illustration of the idea (document photo, edge and text detection, OCR, a verification
+mark); it is not output of the scripts. The scripts have no interface of their own: below are the SVM metrics they
+saved in `openCv/path/`, drawn in window frames by `tools/readme-images`.
 
 <p align="center">
   <img src="docs/images/metrics.jpg" alt="Class-wise metrics and precision of the traffic-sign SVM" width="100%">
