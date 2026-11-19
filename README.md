@@ -13,7 +13,7 @@
 
 **id-verification** is a small set of Python scripts for a basic identity-document check with OpenCV and OCR, plus
 the image-processing exercises that led to it. It was split off from the former `Id-Verification-And-Neural-Network`
-workspace; the PyTorch part lives in `neural-network`.
+workspace; the PyTorch part lives in `next-word-prediction`.
 
 - **ID check (`verifyID.py`).** Pre-processes a photo of a document (grayscale, binary threshold, morphological
   opening), reads the text with Tesseract OCR and checks that the declared country of origin appears in it. It
@@ -106,7 +106,7 @@ merges, Conventional Commits in English. The repository has no workflows.
   and the logo is a wordmark (the project has none).
 - **No dependency file, tests, hooks or CI:** a learning project.
 - **History starts here:** the scripts were copied from `Id-Verification-And-Neural-Network` (now
-  `neural-network`), whose history holds their earlier commits.
+  `next-word-prediction`), whose history holds their earlier commits.
 
 ## Documentation
 

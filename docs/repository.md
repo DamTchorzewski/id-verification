@@ -9,7 +9,7 @@ GitHub: strona repozytorium → ⚙ obok „About” → pola poniżej. Opis ma 
 **Opis (Description):**
 
 ```text
-Python scripts for a basic identity-document check with OpenCV and Tesseract OCR: preprocessing, text extraction and a declared-country match on a sample Polish ID specimen, plus image operations, Haar face detection and an SVM traffic-sign classifier.
+Python prototype of an automated identity-document check: reads the document photo with OCR, compares the declared country with the text, finds the face with OpenCV and classifies images with an SVM. A base for faster, cheaper customer onboarding (KYC) than manual review.
 ```
 
 **Strona (Website):** puste (skrypty, nie ma strony).
@@ -17,13 +17,13 @@ Python scripts for a basic identity-document check with OpenCV and Tesseract OCR
 **Tagi (Topics):**
 
 ```text
-python opencv ocr tesseract pytesseract id-verification computer-vision face-detection haar-cascade image-processing svm scikit-learn
+python opencv ocr tesseract kyc id-verification identity-verification computer-vision face-detection image-processing svm scikit-learn
 ```
 
 Z GitHub CLI (`gh`) to samo jedną komendą:
 
 ```bash
-gh repo edit DamTchorzewski/id-verification --description "Python scripts for a basic identity-document check with OpenCV and Tesseract OCR: preprocessing, text extraction and a declared-country match on a sample Polish ID specimen, plus image operations, Haar face detection and an SVM traffic-sign classifier." --add-topic python,opencv,ocr,tesseract,pytesseract,id-verification,computer-vision,face-detection,haar-cascade,image-processing,svm,scikit-learn
+gh repo edit DamTchorzewski/id-verification --description "Python prototype of an automated identity-document check: reads the document photo with OCR, compares the declared country with the text, finds the face with OpenCV and classifies images with an SVM. A base for faster, cheaper customer onboarding (KYC) than manual review." --add-topic python,opencv,ocr,tesseract,kyc,id-verification,identity-verification,computer-vision,face-detection,image-processing,svm,scikit-learn
 ```
 
 ## Nowe repozytorium
