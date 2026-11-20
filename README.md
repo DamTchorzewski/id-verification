@@ -22,10 +22,10 @@ workspace; the PyTorch part lives in `next-word-prediction`.
 - **Image operations (`imageTransform.py`).** Load, grayscale, crop, rotate and save an image, Canny edge detection
   and Haar-cascade face detection; the faces are cut out to `face_<n>.jpg`.
 - **SVM classifier (`svmModel.py`).** Trains an `SVC` on the GTSRB traffic-sign data set (43 classes, 32 × 32
-  histogram-equalised crops) and plots precision, recall and F1 per class. It is a separate exercise: it has nothing
+  histogram-equalised crops) and plots precision, recall and F1 per class. It is a separate experiment: it has nothing
   to do with documents.
 
-> **Status:** a learning project, not a verification system. The ID check is a text match, not a test of
+> **Status:** a prototype, not a verification system. The ID check is a text match, not a test of
 > authenticity (no security features, no face comparison), and no accuracy figure is claimed. The GTSRB data set is
 > not in the repository.
 
@@ -104,7 +104,7 @@ merges, Conventional Commits in English. The repository has no workflows.
 
 - **No "Open site" button, no phone strip:** scripts with no site; the images are the saved results in window frames,
   and the logo is a wordmark (the project has none).
-- **No dependency file, tests, hooks or CI:** a learning project.
+- **No dependency file, tests, hooks or CI:** a prototype.
 - **History starts here:** the scripts were copied from `Id-Verification-And-Neural-Network` (now
   `next-word-prediction`), whose history holds their earlier commits.
 
