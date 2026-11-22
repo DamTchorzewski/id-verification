@@ -4,3 +4,32 @@ __pycache__/
 
 # Local working files (standards/scratch.md)
 /.scratch/
+
+# web app: dependencies, build and test output
+node_modules/
+dist/
+*.tsbuildinfo
+.vite/
+playwright-report/
+test-results/
+coverage/
+
+# OCR and vision runtimes copied from node_modules by vite.config.ts (never committed)
+/web/public/vendor/
+
+# environment: only the example is tracked
+.env*
+!.env.example
+
+# editors and OS
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# worktrees of parallel sessions
+/.claude/worktrees/
+/.impeccable/
+
+# Angular build cache
+/.angular/

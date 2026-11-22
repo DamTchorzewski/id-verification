@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./node_modules/.tmp/worker",
+    "lib": ["ES2023", "WebWorker"],
+    "types": []
+  },
+  "include": ["web/src/**/*.worker.ts", "web/src/lib/vision-protocol.ts"]
+}

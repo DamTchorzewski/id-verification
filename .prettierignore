@@ -1,0 +1,9 @@
+dist
+node_modules
+pnpm-lock.yaml
+.scratch
+playwright-report
+test-results
+web/public/vendor
+openCv
+docs/images

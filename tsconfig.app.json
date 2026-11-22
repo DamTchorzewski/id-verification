@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./node_modules/.tmp/app",
+    "types": []
+  },
+  "include": ["web/src/**/*.ts"],
+  "exclude": ["web/src/**/*.test.ts", "web/src/**/*.worker.ts"]
+}

@@ -1,0 +1,9 @@
+# esbuild ships a native binary that the build needs; nothing else may run install scripts
+# (tesseract.js only prints an opencollective banner; lmdb, msgpackr-extract and @parcel/watcher
+# ship prebuilt binaries as optional dependencies, their scripts only rebuild them).
+allowBuilds:
+  esbuild: true
+  tesseract.js: false
+  lmdb: false
+  msgpackr-extract: false
+  "@parcel/watcher": false
